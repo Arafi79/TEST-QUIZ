@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: '/TEST-QUIZ/', // ⚠️ استبدل REPOSITORY_NAME باسم مستودعك على جيت هاب بالضبط
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
