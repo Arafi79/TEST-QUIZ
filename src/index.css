@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Bhaijaan 2', 'Baloo 2', 'Cairo', system-ui, -apple-system, sans-serif;
+    letter-spacing: normal;
+  }
+}
+
+/* A4 Sheet Dimensions and 1cm Margins (10mm) on Screen */
+.a4-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 10mm;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 860px) {
+  .a4-sheet {
+    width: 100%;
+    min-height: auto;
+    padding: 12px;
+  }
+}
+
+/* Print Specific Rules (Exact A4 size 210mm x 297mm with 10mm page margins) */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset sheet container so page margins from @page are used without doubling */
+  .a4-sheet {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevent awkward page breaks inside individual exercise cards */
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

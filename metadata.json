@@ -1,0 +1,6 @@
+{
+  "name": "مصمم تمارين وبطاقات العد للأطفال",
+  "description": "تطبيق متكامل لتصميم وطباعة وتصدير أوراق عمل وتمارين العد والحساب للأطفال بقياس A4 مع خيارات رسوم وأشكال وأعداد وأصابع اليدين.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
